@@ -1,0 +1,760 @@
+:root{--yasil: #54d154;}
+/* HEADER */
+/* TEST */
+html{scroll-behavior: smooth;}
+.scrollbtn{
+    text-decoration: none;
+    padding: 10px 20px;
+    margin-bottom: 10px;
+    background-color:var(--yasil);
+    color: white;
+    border-radius: 12px;
+    transition: background-color 0.3s;
+    transition: .3s ease;
+    
+}
+.scrollbtn:hover{
+    background-color:rgb(0, 237, 0);
+    color:white;
+    transform: scale(1.1);
+    text-shadow: 1px 1px 5px black;
+    
+}
+
+/* TEST FINISH */
+header{
+    background: url(./img/headerbg.jpg) center/cover;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+    justify-content: space-between;
+    padding: 5px 30px;
+}
+menu li{padding: 0 10px; cursor: pointer;}
+menu li a{
+font: 1em 'Proxima Nova';
+color: #ffffff;
+text-shadow: 1px 1px 5px black;
+transition: .3s ease;}
+menu li a:hover{
+    color: var(--yasil);
+    text-shadow: 1px 1px 5px black;
+}
+h1{font: bold 2em Montserrat; text-transform: capitalize; color: white;}
+h2{
+font:1.25em Montserrat;
+letter-spacing: 4px;
+color: #828181;
+text-transform: uppercase;
+}
+h3{
+    font: bold 1.5em 'Proxima Nova';
+    color: #818181;
+}
+hr{
+    border: none;
+    height: 2px;
+    width: 40px;
+    background: #818181;
+}
+h6{
+font:1em 'Myriad Pro';
+color: #b7b3b3;
+}
+.bgyasil hr{background-color: #207b20;}
+.bgyasil h2{color: #207b20;}
+.bgyasil h6{ color: #2b9b2b}
+#switch{display: flex;}
+#switch>*{
+    height: 27px;
+    border: none;
+    outline: none;
+    background: #ffffffcc;
+    padding: 7px 15px;
+}
+#switch [type="search"]{border-radius: 1em 0 0 1em;}
+#switch [type="submit"]{border-radius: 0 1em 1em 0;}
+#switch [type="submit"] img{height: 14px;}
+.title>*{padding:20px 0;}
+
+.title button{
+    padding: 15px 20px;
+    color: #fff;
+    background-color: #54d154;
+    border-radius: 19px;
+    border: none;
+    width: 200px;
+    font:1.3em 'Proxima Nova';
+    color: #ffffff;
+    text-align: center;
+    transition: .3s ease;
+}
+.title button:hover{
+    border: 1px solid var(--yasil);
+    background-color: transparent;
+    color:rgb(82, 225, 0);
+    text-shadow: 1px 1px 5px black;
+    transform: scale(1.1);
+
+}
+/* HEADER FINISH */
+.bgag{background-color: #fff;}
+.bgyasil{background-color: var(--yasil);}
+.bgboz{background-color: #f1f1f1;}
+/* MAIN */
+main section{
+    padding: 40px 0;
+    text-align: center;}
+    .icon{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: auto;
+        background-color: #e1f3e1;
+        width: 70px;
+        height: 70px;
+        border-radius: 15px;
+        font-size: 2em;
+        color: var(--yasil);
+    }
+    #art3{padding: 48px 0;}
+    #art3 article{padding: 24px 1em;}
+    #art3 article p{
+        text-align: center;
+        max-width: 50%;
+        margin: 20px auto;
+    }
+    #art3 h3{
+        padding-top: 20px;
+    }
+    #art3 article a{
+        background-color: var(--yasil);
+        border-radius: 12px;
+        color: white;
+        padding: 10px 20px;
+        transition: .3s ease;
+        display:inline-block;
+    }
+    #art3 article a:hover{
+        background-color: #54d154;
+        color: #207b20;
+        transform: scale(1.1);
+    }
+    #gbtn3{display: flex;
+    justify-content: center;
+padding: 50px 0;}
+    #gbtn3 button{
+        height: 33px;
+        border: 1px solid #2b9b2b;
+        background-color: #fff;
+        font: 1em 'Proxima Nova';
+        color: #2b9b2b;
+        padding: 5px 20px;
+    }
+    #gbtn3 button:first-child{border-radius: 1em 0 0 1em;}
+    #gbtn3 button:last-child{border-radius: 0 1em 1em 0;}
+
+    /* Carousel */
+   .carousel{
+         width:91%;
+        margin: 3em auto;
+        overflow-x:auto;
+        display: flex;
+        gap: .5em;
+        scroll-behavior: smooth;
+        anchor-name: --carousel;
+        scroll-snap-type: x mandatory;
+        scroll-marker-group: after;
+    }
+    .carousel::scroll-marker-group{
+        display: flex;
+        justify-content: center;
+        gap: .5em;
+    }
+    .card::scroll-marker:target-current{
+        background-color: #207b20;
+    }
+    .card::scroll-marker{
+        content: '';
+        height: 1em;
+        width: 1em;
+        background-color: rgb(255, 255, 255);
+        border-radius: 50%;
+    }
+    .carousel::-webkit-scrollbar{
+        display: none;
+    }
+    .carousel::scroll-button(right),.carousel::scroll-button(left){
+        content: "→";
+        border: none;
+        background-color:#207b20;
+        font-size: 1rem;
+        color: white;
+        height: 30px;
+        width: 30px;
+        border-radius: 50%;
+        padding-bottom: .1em;
+        cursor: pointer;
+        position: fixed;
+        position-anchor: --carousel;
+        position-area: right center;
+        translate: -50%;
+        
+    }
+     .carousel::scroll-button(left){
+        content: "←";
+        position-area: left center;
+        translate: 50%;
+     }
+      .carousel::scroll-button(right):disabled,.carousel::scroll-button(left):disabled {
+        opacity: 0.5;
+        cursor: auto;
+      }
+    .card{
+        scroll-snap-align: start;
+        flex: 0 0 100%;
+        height: 12em;
+        background-color:#207b20;
+        padding: .2em;
+        border-radius: .5em;
+        text-align: center;
+        align-content: center;
+        width: 20em;
+        align-content: center;
+        overflow: hidden;
+    }
+    .card img{
+        
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: .5em;
+    }
+ /* Carousel FINITO */
+
+ 
+ .tarticle{
+    display: flex;
+    justify-content: center;
+    text-align: left;
+    align-items: center;
+    padding-top: 26px;
+    gap: 5px;
+ }
+ .testslider{
+    padding-top: 70px;
+ }
+ .testslider p{
+     margin: 0 auto;
+     max-width: 50%;
+ }
+ .testtxt h4{
+    font:1em 'Proxima Nova';
+    color: #444444;
+
+ }
+ .testtxt p{
+font: bold 1em "Proxima Nova";
+color: #cccccc;
+
+
+text-align: center;
+ }
+ .icont img{
+    height: 46px;
+    overflow: hidden;
+    object-fit: cover;
+    border: 2px solid #e1e1e1;
+    border-radius: 50%;
+ }
+ .icont{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    
+ }
+
+
+ /* OUR HAPPY CLIENT  */
+  .carousel3{
+         width:30%;
+        margin: 3em auto;
+        overflow-x:auto;
+        display: flex;
+        gap: .5em;
+        scroll-behavior: smooth;
+        anchor-name: --carousel3;
+        scroll-snap-type: x mandatory;
+        scroll-marker-group: after;
+    }
+    .carousel3::scroll-marker-group{
+        display: flex;
+        justify-content: center;
+        gap: .5em;
+    }
+    .card3::scroll-marker:target-current{
+        background-color:#444444;
+    }
+    .card3::scroll-marker{
+        content: '';
+        height: 1em;
+        width: 1em;
+        background-color: rgb(255, 255, 255);
+        border-radius: 50%;
+        
+    }
+    .carousel3::-webkit-scrollbar{
+        display: none;
+    }
+    .carousel3::scroll-button(right),.carousel3::scroll-button(left){
+        content: "→";
+        border: none;
+        background-color:#000000;
+        font-size: 1rem;
+        color: white;
+        height: 30px;
+        width: 30px;
+        border-radius: 50%;
+        padding-bottom: .1em;
+        cursor: pointer;
+        position: fixed;
+        position-anchor: --carousel3;
+        position-area: right center;
+        translate: -50%;
+        
+    }
+     .carousel3::scroll-button(left){
+        content: "←";
+        position-area: left center;
+        translate: 50%;
+     }
+      .carousel3::scroll-button(right):disabled,.carousel3::scroll-button(left):disabled {
+        opacity: 0.5;
+        cursor: auto;
+      }
+    .card3{
+        scroll-snap-align: start;
+        flex: 0 0 100%;
+        height: 12em;
+        background-color:transparent;
+        padding: .2em;
+        border-radius: .5em;
+        text-align: center;
+        align-content: center;
+        width: 20em;
+        align-content: center;
+        overflow: hidden;
+    }
+    .card3 img{
+        overflow: hidden;
+        object-fit: contain;
+        width: 90%;
+        height: 100%;
+        
+    }
+ /* OUR HAPPY CLIENT FINISH */
+  .pimg{
+    display: flex;
+    flex-direction: column;
+    margin: 0 auto;
+         width: 124px;
+        height: 124px;
+        background-color: white;
+        border-radius: 50%;
+    }
+    .pimg img{
+        width:100%;
+        height: 100%;
+        border-radius: 50%;
+        object-fit: contain;
+    }
+    .insan{
+        width: 2px;
+        height: 70px;
+    }
+    .people h5{
+        font:1em "Proxima Nova";
+        color: #ffffff;
+        text-align: center;
+    }
+    .psocial{
+        background-color: #c6e9c6;
+        width: 100px;
+        height: 28px;
+        border-radius:12px;
+        margin: 10px auto;
+        
+    }
+    .psocial a{
+        padding: 6px 1px;
+        display: inline-block;
+        align-items: center;
+        text-align: center;
+        
+    }
+    .people{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        gap: 50px;
+        padding: 50px 0;
+    }
+    .bgyasil{position: relative;}
+    .pplbg{
+        position: absolute;
+        background-color:#3eba3e ;
+        height:80px;
+        width: 100%;
+        bottom: 0px;
+    }
+    .pplbg button{
+        margin: 20px 0;
+        padding: 13px 26px;
+        color: white;
+        background-color:#54d154;
+        border: none;
+        border-radius: 12px;
+        transition: .3s ease;
+    }
+    .pplbg button:hover{
+        transform: scale(1.1);
+        border: 1px solid #127b12;
+        background-color: #fff;
+        color: #54d154;
+        cursor: pointer;
+
+       
+    }
+   footer{
+    background-color: #333333;
+    text-align: center;
+    height: auto;
+   }
+   footer h2 , p {
+    padding: 10px 0;
+    color: #cccccc;
+
+   }
+   .comtactus a{
+    color: #cccccc;
+   }
+   footer form {
+    display: flex;
+    flex-direction: column;
+    max-width: 30%;
+    margin: 0 auto;
+    color: #cccccc;
+   }
+   #sbt{
+    height: 30px;
+    background-color: #434343;
+    border: none;
+    border-radius: 3px;
+   }
+   #sbt2{
+    height: 30px;
+    background-color: #127b12;
+    border: none;
+    color: white;
+    border-radius: 3px;
+   }
+   .comtactus form textarea{
+    max-width: 100%;
+    height:10vh;
+    margin-top: 10px;
+    background-color: #434343;
+    border: none;
+    border-radius: 3px
+   }
+   footer form input{
+    margin: 10px 0;
+   }
+  .comtactus{
+    display: flex;
+    flex-direction: column;
+    margin: 0 auto;
+    justify-content: center;
+    padding: 20px 0;
+  }
+  .csecond iframe{
+    max-width: 90%;
+  }
+  .comtactus{position: relative;}
+  .contactusbg{
+    position: absolute;
+    width: 100%;
+    height: auto;
+    background-color:#222222 ;
+}
+.contactusbg h2{
+    color: #101010;
+}
+.contactusbg hr{
+    background-color: #101010;
+}
+
+.newsimages{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    justify-content: space-around;
+    align-items: center;
+    height: 50vh;
+    
+    
+}
+.divimg{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    max-width: 40%;
+    flex-direction: column;
+    
+    
+}
+.divimg img{
+    max-width: 70%;
+    object-fit: cover;
+    overflow: hidden;
+}
+.fimgnew{
+    width: 100% !important;
+}
+.madewith{
+    
+    background-color: #111111;
+    overflow: hidden;
+
+}
+.madewith h2{
+font:1em "Proxima Nova";
+color: #ffffff;
+text-align: center;
+}
+.contactusbg::after{
+        clear: both;
+    content:"";
+    
+}
+@media only screen and (min-width: 768px) {
+    .contactusbg{
+    position: absolute;
+    width: 100%;
+    height: auto;
+    background-color:#222222 ;
+}
+    .newsimages{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    justify-content: space-around;
+    align-items: center;
+    
+    
+}
+.divimg{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    max-width: 10%;
+    flex-direction: column;
+    
+    
+}
+.divimg img{
+    max-width: 70%;
+    object-fit: cover;
+    overflow: hidden;
+}
+    .newsimages{
+    display: flex;
+    flex-direction: row;
+    
+    width: 100%;
+    justify-content: space-around;
+    align-items: center;
+    
+}
+nav{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+nav a img{
+    padding-right:10vw;}
+menu{
+    order: -1;
+    display: flex;
+
+}
+
+    menu li a:hover, menu li a.active {
+        border-top: 5px solid var(--yasil)
+    }
+    h1{font-size: 3.5em;}
+    #art3{display: flex;
+    
+    }
+    .icon{
+         width: 140px;
+        height: 140px;
+        border-radius: 29px;
+        font-size: 4.5em;
+    }
+    #gbtn3 button.active, #gbtn3 button:hover{
+        color: #fff;
+        background-color: #2b9b2b;
+    }
+    /* Carousel*/
+    .carousel{
+        width:91%;
+        margin: 3em auto;
+        overflow-x:auto;
+        display: flex;
+        gap: .5em;
+        scroll-behavior: smooth;
+        anchor-name: --carousel;
+        scroll-snap-type: x mandatory;
+        scroll-marker-group: after;
+        
+    }
+    .carousel::scroll-marker-group{
+        display: flex;
+        justify-content: center;
+        gap: .5em;
+    }
+    .card::scroll-marker:target-current{
+        background-color: #207b20;
+    }
+    .card::scroll-marker{
+        content: '';
+        height: 1em;
+        width: 1em;
+        background-color: rgb(255, 255, 255);
+        border-radius: 50%;
+    }
+    .carousel::-webkit-scrollbar{
+        display: none;
+    }
+    .carousel::scroll-button(right),.carousel::scroll-button(left){
+        content: "→";
+        border: none;
+        background-color:#207b20;
+        font-size: 1.5rem;
+        color:white;
+        height: 40px;
+        width: 40px;
+        border-radius: 50%;
+        padding-bottom: .1em;
+        cursor: pointer;
+        position: fixed;
+        position-anchor: --carousel;
+        position-area: right center;
+        translate: -50%;
+        
+    }
+     .carousel::scroll-button(left){
+        content: "←";
+        position-area: left center;
+        translate: 50%;
+     }
+      .carousel::scroll-button(right):disabled,.carousel::scroll-button(left):disabled {
+        opacity: 0.5;
+        cursor: auto;
+      }
+    .card{
+        scroll-snap-align: start;
+        flex: 0 0 20em;
+        height: 12em;
+        background-color:#207b20;
+        padding: .3em;
+        border-radius: .5em;
+        text-align: center;
+        align-content: center;
+        overflow: hidden;
+    }
+    /* Carousel F */
+    .pimg{
+         width: 124px;
+        height: 124px;
+        background-color: white;
+        border-radius: 50%;
+    }
+    .pimg img{
+        width:100%;
+        height: 100%;
+        border-radius: 50%;
+        object-fit: contain;
+    }
+    .insan{
+        width: 2px;
+        height: 70px;
+    }
+    .people h5{
+        font:1em "Proxima Nova";
+        color: #ffffff;
+        text-align: center;
+    }
+    .psocial{
+        background-color: #c6e9c6;
+        width: 100px;
+        height: 28px;
+        border-radius:12px;
+        margin: 10px auto;
+        
+    }
+    .psocial a{
+        padding: 6px 1px;
+        display: inline-block;
+        align-items: center;
+        text-align: center;
+        
+    }
+    .people{
+        display: flex;
+        justify-content: center;
+        gap: 50px;
+        padding: 50px 0;
+    }
+    .bgyasil{position: relative;}
+    .pplbg{
+        position: absolute;
+        background-color:#3eba3e ;
+        height:80px;
+        width: 100%;
+        bottom: 0px;
+    }
+    .pplbg button{
+        margin: 20px 0;
+        padding: 13px 26px;
+        color: white;
+        background-color:#54d154;
+        border: none;
+        border-radius: 12px;
+        transition: .3s ease;
+    }
+    .pplbg button:hover{
+        transform: scale(1.1);
+        border: 1px solid #127b12;
+        background-color: #fff;
+        color: #54d154;
+        cursor: pointer;
+
+       
+    }
+    .matin{
+        display: block;
+    }
+    .comtactus{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    padding: 20px 0;
+  }
+  .cfirst{
+    width: 50%;
+  }
+
+}
